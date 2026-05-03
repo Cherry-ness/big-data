@@ -222,6 +222,7 @@ spark-events/
 
 # Genomics raw data (large binary/text files — use DVC or external storage)
 data/raw/
+*.gct
 *.fastq
 *.fastq.gz
 *.fq
@@ -252,3 +253,9 @@ Thumbs.db
 .jupyter/
 # Uncomment below to ignore notebooks entirely (use nbstripout to strip outputs instead):
 # *.ipynb
+
+# Generated analysis output (run the notebook to regenerate)
+src/preliminary-analysis/
+
+# Internal docs — personal notes, not for the public repo
+src/internal-docs/
