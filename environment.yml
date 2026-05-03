@@ -1,0 +1,23 @@
+name: big-data
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - pyspark>=3.5
+  - jupyterlab
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - biopython
+  - pysam          # SAM/BAM/CRAM alignment file I/O
+  - cyvcf2         # fast VCF/BCF parsing
+  - tqdm
+  - pip
+  - pip:
+      - black
+      - isort
+      - flake8
