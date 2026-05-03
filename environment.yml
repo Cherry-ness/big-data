@@ -1,7 +1,6 @@
 name: big-data
 channels:
   - conda-forge
-  - bioconda
   - defaults
 dependencies:
   - python=3.11
@@ -12,12 +11,3 @@ dependencies:
   - numpy
   - matplotlib
   - seaborn
-  - biopython
-  - pysam          # SAM/BAM/CRAM alignment file I/O
-  - cyvcf2         # fast VCF/BCF parsing
-  - tqdm
-  - pip
-  - pip:
-      - black
-      - isort
-      - flake8
