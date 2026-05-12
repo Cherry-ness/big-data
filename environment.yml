@@ -1,0 +1,13 @@
+name: big-data
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pyspark>=3.5
+  - jupyterlab
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
