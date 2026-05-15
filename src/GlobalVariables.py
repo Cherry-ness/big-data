@@ -4,8 +4,10 @@ import os
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # paths
-FILE_PATH  = os.path.join(SRC_DIR, "data", "GTEx_Analysis_2022-06-06_v10_RNASeQCv2.4.2_gene_tpm_non_lcm.gct")
-OUTPUT_DIR = os.path.join(SRC_DIR, "preliminary-analysis")
+FILE_PATH          = os.path.join(SRC_DIR, "data", "GTEx_Analysis_2022-06-06_v10_RNASeQCv2.4.2_gene_tpm_non_lcm.gct")
+SAMPLE_ATTRS_PATH  = os.path.join(SRC_DIR, "data", "GTEx_Analysis_v10_Annotations_SampleAttributesDS.txt")
+SUBJECT_PHENO_PATH = os.path.join(SRC_DIR, "data", "GTEx_Analysis_v10_Annotations_SubjectPhenotypesDS.txt")
+OUTPUT_DIR         = os.path.join(SRC_DIR, "preliminary-analysis")
 
 # dataset constants
 N_GENES   = 59033
