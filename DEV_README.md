@@ -14,6 +14,22 @@ python -m ipykernel install --user --name big-data --display-name "Python (big-d
 jupyter lab
 ```
 
+## Quick activate from terminal
+
+Once the env exists, you can drop into it with a single command from the repo root:
+
+```bash
+source .activate
+```
+
+This activates the conda env, `cd`s you into the repo root, and prints which Python is now on PATH. If your env is named something other than `big-data-class`, override it inline:
+
+```bash
+ENV_NAME=big-data source .activate
+```
+
+Or edit the default at the top of [.activate](.activate).
+
 > If you already have the environment and just want to update it after a change to `environment.yml`:
 > ```bash
 > conda env update -f environment.yml --prune
@@ -47,3 +63,27 @@ If your machine has less than ~16 GB of RAM, lower this before running the noteb
 | 8 GB      | `"4g"`                    |
 
 Spark needs the driver memory plus room for the OS and JVM overhead, so a rough rule is to set it to no more than half your total RAM.
+
+---
+
+# Before committing a notebook
+
+Run the prep script to clear outputs from the source notebook and produce a clean `_Executed` companion in a sibling `Executed/` folder that keeps the run outputs for teammates:
+
+```bash
+python scripts/prep-notebook.py partitioning
+# or with an explicit path:
+python scripts/prep-notebook.py src/notebooks/Partitioning.ipynb
+```
+
+What it does:
+
+1. duplicates the notebook into `<parent>/Executed/<NameOfNotebook>_Executed.ipynb` (creates the folder if needed)
+2. runs the duplicate end-to-end
+3. sanitizes absolute paths, hostname, IP and MAC addresses from text outputs (plots / images untouched)
+4. clears outputs on the source notebook so diffs stay readable
+5. `git add`s both files
+
+Pass `--no-stage` if you want to inspect the result before staging.
+
+**Registering a new notebook:** add it to `NOTEBOOK_REGISTRY` in [`src/GlobalVariables.py`](src/GlobalVariables.py) so it's reachable by short name.

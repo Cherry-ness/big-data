@@ -7,7 +7,11 @@ dependencies:
   - pyspark>=3.5
   - jupyterlab
   - ipykernel
+  - nbconvert
+  - nbclient
   - pandas
   - numpy
   - matplotlib
   - seaborn
+  - nbformat
+  - nbconvert
