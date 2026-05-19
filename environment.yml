@@ -13,5 +13,6 @@ dependencies:
   - numpy
   - matplotlib
   - seaborn
+  - scikit-learn
   - nbformat
   - nbconvert
